@@ -1,0 +1,8 @@
+sudo: required
+services:
+        - docker
+before_install:
+        - docker build -t teymurleng/docker-react -f Dockerfile.dev .
+
+script:
+        - docker run teymurleng/docker-react npm run test -- --coverage
